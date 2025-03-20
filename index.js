@@ -1,14 +1,13 @@
 function findElementContainingTextDeep(selector, text) {
     let element;
-    const currentSelector = selector.slice(1);
     
     if (selector.startsWith('#')) {
         // Handle ID selector
-        element = document.getElementById(currentSelector);
+        element = document.getElementById(selector.slice(1));
     } else if (selector.startsWith('.')) {
         // Handle class selector
         element = Array.from(document.querySelectorAll(selector)).find(el =>
-            el.classList.contains(currentSelector) && el.innerText.trim().includes(text)
+            el.classList.contains(selector) && el.innerText.trim().includes(text)
         );
     } else {
         // Handle any other type of selector
