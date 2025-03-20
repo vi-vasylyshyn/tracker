@@ -1,7 +1,7 @@
 function findElementContainingTextDeep(selector, text) {
-    return Array.from(document.querySelectorAll(selector)).find(element =>
-        element.innerText.trim().includes(text)
-    );
+    return Array.from(document.querySelectorAll(`${selector}[class*="class-name"]`)).find(element => {
+        return element.innerText.trim().includes(text);
+    });
 }
 
 function sendEvent(eventData) {
