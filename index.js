@@ -6,7 +6,7 @@ function findElementContainingTextDeep(selector, text) {
         element = document.getElementById(selector.slice(1));
     } else if (selector.startsWith('.')) {
         // Handle class selector
-        element = Array.from(document.querySelectorAll(selector)).find(el =>
+        element = Array.from(document.getElementsByClassName(selector.slice(1))).find(el =>
             el.classList.contains(selector) && el.innerText.trim().includes(text)
         );
     } else {
@@ -31,6 +31,7 @@ function sendEvent(eventData) {
   function attachTracking(events) {
       events.forEach(({ selector, event, textContent }) => {
         const element = findElementContainingTextDeep(selector, textContent); 
+          console.log()
 
         if (element) {
             element.addEventListener(event, function (e) {
