@@ -8,7 +8,7 @@ function findElementContainingTextDeep(selector, text) {
         // Handle class selector
        
         element = Array.from(document.querySelectorAll(selector)).find(el =>{
-             console.log(elem, el.innerText, el.innerText.trim().includes(text), text)
+             console.log(el, el.innerText, el.innerText.trim().includes(text), text)
           return el.innerText.trim().includes(text)
         });
     } else {
