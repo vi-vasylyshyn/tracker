@@ -6,8 +6,9 @@ function findElementContainingTextDeep(selector, text) {
         element = document.getElementById(selector.slice(1));
     } else if (selector.startsWith('.')) {
         // Handle class selector
-        element = Array.from(document.getElementsByClassName(selector.slice(1))).find(el =>
-            el.classList.contains(selector) && el.innerText.trim().includes(text)
+        console.log(document.querySelectorAll(selector))
+        element = Array.from(document.querySelectorAll(selector)).find(el =>
+          el.innerText.trim().includes(text)
         );
     } else {
         // Handle any other type of selector
