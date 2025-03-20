@@ -1,4 +1,9 @@
+console.log("Tracker script loaded on another site!");
+
+
 (function () {
+  console.log("Tracker script loaded from file!");
+
   const EVENT_NAME = "dailyActivityReport";
   const today = new Date().toISOString().split("T")[0];
 
@@ -20,3 +25,4 @@
     console.log("Sending event:", eventData);
   }
 })();
+
