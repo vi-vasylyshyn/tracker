@@ -26,6 +26,7 @@ function sendEvent(eventData) {
 }
 
 (function () {
+    console.log('document', document.currentScript?.dataset, document.currentScript)
   const events = [
       { selector: '.radioButtonGroup_radioButton__1S1fy', textContent: 'Female', event: 'click' }
   ];
