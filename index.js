@@ -28,7 +28,7 @@ function sendEvent(eventData) {
 (function () {
 
 navigation.addEventListener('navigate', (e) => {
-   console.log(window.location.href)
+   console.log(e.currentTarget.currentEntry.url)
 });
 
   const events = [
