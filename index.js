@@ -26,9 +26,17 @@ function sendEvent(eventData) {
 }
 
 (function () {
+window.addEventListener("popstate", (event) => {
+  console.log(
+    `location pop state: ${document.location}, state: ${JSON.stringify(event.state)}`,
+  );
+});
+    window.addEventListener('hashchange', (event)=>{
 
-    const {event}=document.currentScript?.dataset
-        console.log('event', event)
+console.log(
+    `location hash: ${document.location}, state: ${JSON.stringify(event.state)}`,
+  );
+});
   const events = [
       { selector: '.radioButtonGroup_radioButton__1S1fy', textContent: 'Female', event: 'click' }
   ];
